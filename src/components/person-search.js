@@ -1,25 +1,26 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { searchperson } from '../actions/person-actions';
+import { searchperson, fetchallpersons } from '../actions/person-actions';
 
 class PersonSearch extends Component {
 
-  constructor(props){
-    super(props);          
+  constructor(props) {
+    super(props);
     this.searchInputChange = this.searchInputChange.bind(this);
-   
-    }
-  searchInputChange(event) {
-    this.props.onChange(event.target.value);
   }
 
+  searchInputChange(event) {
+    if (event.target.value.length > 0) {
+      this.props.onChange(event.target.value);
+    } else {
+      this.props.onClear();
+    }
+  }
 
   render() {
-
     return (
       <div>
         <input type="text" className="search-input" onChange={this.searchInputChange} />
-
       </div>
     )
   }
@@ -28,12 +29,15 @@ class PersonSearch extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      onChange: (name) => {
-          dispatch(searchperson(name)) 
-      }
+    onChange: (name) => {
+      dispatch(searchperson(name))
+    },
+    onClear: () => {
+      dispatch(fetchallpersons())
+    }
   }
 }
 
-connect(null, mapDispatchToProps)(PersonSearch)
+export default connect(null, mapDispatchToProps)(PersonSearch)
 
-export default PersonSearch
+
