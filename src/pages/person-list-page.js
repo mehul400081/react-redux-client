@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchallpersons } from '../actions/person-actions';
 import PersonList from '../components/person-list';
 import PersonSearch from '../components/person-search';
+import PersonAdd from '../components/person-add';
 
 class PersonListPage extends Component {
 
@@ -14,6 +15,10 @@ class PersonListPage extends Component {
     render() {
         return (
             <div>
+                <br></br>
+                <br></br>
+                <PersonAdd/>
+                <br></br>
                 <PersonSearch/>
                 <PersonList persons={this.props.persons} />
             </div>

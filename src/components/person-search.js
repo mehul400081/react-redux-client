@@ -20,7 +20,11 @@ class PersonSearch extends Component {
   render() {
     return (
       <div>
-        <input type="text" className="search-input" onChange={this.searchInputChange} />
+        <table><tbody><tr>
+          <td>Search by Person Name</td>
+          <td><input type="text" className="search-input" onChange={this.searchInputChange} /></td>
+        </tr>
+        </tbody></table>
       </div>
     )
   }
@@ -39,5 +43,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(null, mapDispatchToProps)(PersonSearch)
-
-
