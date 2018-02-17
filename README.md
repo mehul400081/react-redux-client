@@ -3,12 +3,14 @@
 React client using redux for state management. Requires running backend expressAPI project.
 
 ## To Run:
+```
+    npm install
 
-    `npm install`
-
-    `npm start` 
+    npm start 
 
     Launch application using `http://localhost:3000/`
+
+```
 
 ## References:
 
