@@ -21,3 +21,13 @@ export function searchperson(name) {
     })
   }
 }
+export function addperson(person) {
+  console.log(person);
+  return dispatch => {
+    dispatch({
+      type: 'ADD_PERSON',
+      payload: client.post(`${url}`,person)
+    })
+  }
+}
+

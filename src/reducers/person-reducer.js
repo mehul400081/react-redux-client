@@ -4,7 +4,7 @@ const defaultState = {
 
 
 export default (state = defaultState, action = {}) => {
-    console.log(action.type);   
+    console.log(action.type);
     console.log(state);
     switch (action.type) {
         case 'FETCH_ALL_PERSONS_FULFILLED': {
@@ -14,6 +14,12 @@ export default (state = defaultState, action = {}) => {
             }
         }
         case 'SEARCH_PERSON_FULFILLED': {
+            return {
+                ...state,
+                persons: action.payload.data
+            }
+        }
+        case 'ADD_PERSON_FULFILLED': {
             return {
                 ...state,
                 persons: action.payload.data
