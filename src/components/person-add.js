@@ -24,6 +24,4 @@ class PersonAdd extends Component {
         )
     }
 }
-
-
 export default PersonAdd;
