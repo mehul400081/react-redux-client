@@ -15,7 +15,7 @@ class PersonAdd extends Component {
 
             this.props.onAdd({ "name": user, "email": email, "age": age });
         }else{
-            findDOMNode(this.refs.validationLabel).value = 'please enter mandatory field';
+            alert('please enter mandatory field');
         }
     }
     render() {
